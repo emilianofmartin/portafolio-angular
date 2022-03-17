@@ -47,9 +47,9 @@ export class ProductsService {
   private filterProducts( term: string) {
     this.filteredProducts = this.products.filter(product => {
       const title = product.titulo.toLocaleLowerCase();
-      const category = product.titulo.toLocaleLowerCase();
+      const category = product.categoria.toLocaleLowerCase();
 
-      return title.includes(term) || category.includes(term);
+      return (title.indexOf(term.toLocaleLowerCase()) >= 0 || category.indexOf(term.toLocaleLowerCase()) >= 0);
     });
     /*
     this.filteredProducts = [];
